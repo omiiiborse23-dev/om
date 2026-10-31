@@ -1,0 +1,72 @@
+import java.lang.*;
+
+class Publication
+{
+    String title;
+    double price;
+    int copies;
+
+    void saleCopy()
+    {
+        System.out.println("Sales = Rs. " + (price * copies));
+    }
+}
+
+class Book extends Publication
+{
+    String author;
+
+    void orderCopies(int n)
+    {
+        copies = copies + n;
+        System.out.println(n + " book copies ordered.");
+    }
+
+    void display()
+    {
+        System.out.println("Book Title : " + title);
+        System.out.println("Author     : " + author);
+        System.out.println("Price      : " + price);
+        System.out.println("Copies     : " + copies);
+    }
+}
+
+class Magazine extends Publication
+{
+    int orderQty;
+    String currentIssue;
+
+    void receiveIssue()
+    {
+        copies = copies + orderQty;
+        System.out.println("Magazine issue received.");
+    }
+}
+
+class Exp2
+{
+    public static void main(String[] args)
+    {
+        Book b = new Book();
+
+        b.title = "Chhava";
+        b.author = "Shivaji Sawant";
+        b.price = 750;
+        b.copies = 10;
+
+        b.orderCopies(7);
+        b.display();
+        b.saleCopy();
+
+        Magazine m = new Magazine();
+
+        m.title = "GQ India Magazine";
+        m.price = 100;
+        m.copies = 20;
+        m.orderQty = 5;
+        m.currentIssue = "August 2018";
+
+        m.receiveIssue();
+        m.saleCopy();
+    }
+}
