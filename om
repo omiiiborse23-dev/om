@@ -1,0 +1,54 @@
+import java.lang.*;
+
+class complex
+{
+    int real1, imag1;
+    int real2, imag2;
+
+    complex()
+    {
+        this.real1 = 0;
+        this.imag1 = 0;
+        this.real2 = 0;
+        this.imag2 = 0;
+    }
+
+    complex(int tempreal1, int tempimag1, int tempreal2, int tempimag2)
+    {
+        this.real1 = tempreal1;
+        this.imag1 = tempimag1;
+        this.real2 = tempreal2;
+        this.imag2 = tempimag2;
+
+        System.out.println("First complex number = " + real1 + "+" + imag1 + "i");
+        System.out.println("Second complex number = " + real2 + "+" + imag2 + "i");
+
+        int realsum = real1 + real2;
+        int imagsum = imag1 + imag2;
+
+        System.out.println("Sum of complex number = " + realsum + "+" + imagsum + "i");
+
+        int realsub = real1 - real2;
+        int imagsub = imag1 - imag2;
+
+        System.out.println("Sub of complex number = " + realsub + "+" + imagsub + "i");
+
+        int realmulti = real1 * real2;
+        int imagmulti = imag1 * imag2;
+
+        System.out.println("Multi of complex number = " + realmulti + "+" + imagmulti + "i");
+
+        int realdiv = real1 / real2;
+        int imagdiv = imag1 / imag2;
+
+        System.out.println("Div of complex number = " + realdiv + "+" + imagdiv + "i");
+    }
+}
+
+class ComplexArithmatic
+{
+    public static void main(String args[])
+    {
+        complex c1 = new complex(2, 5, 5, 2);
+    }
+}
